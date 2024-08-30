@@ -115,6 +115,10 @@ The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/13
 
 
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
+
 # Issue H-2: A voter lose bribe rewards if another voter voted before claim. 
 
 Source: https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/52 
@@ -341,6 +345,10 @@ Escalations have been resolved successfully!
 
 Escalation status:
 - [chinmay-farkya](https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/52/#issuecomment-2263065548): accepted
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue H-3: Wrong call order for `setTopPoolIdsWithWeights`, resulting in wrong distribution of rewards 
 
@@ -695,6 +703,10 @@ However, if this call order is not followed, new pools will also accumulate rewa
 The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/22
 
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue H-4: Voters will lose all bribe rewards forever if they do not claim their rewards after the last bribing period 
 
@@ -1244,6 +1256,10 @@ Escalations have been resolved successfully!
 Escalation status:
 - [chinmay-farkya](https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/164/#issuecomment-2260716700): accepted
 
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
+
 # Issue H-5: Voting does not take into account end of staking lock period 
 
 Source: https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/166 
@@ -1732,6 +1748,10 @@ Escalations have been resolved successfully!
 Escalation status:
 - [chinmay-farkya](https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/166/#issuecomment-2265003852): accepted
 
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
+
 # Issue H-6: Funds unutilized for rewards may get stranded in BribeRewarder 
 
 Source: https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/172 
@@ -1803,6 +1823,20 @@ Manual Review
 BribeRewarder.sol should have a method to recover unutilized reward tokens, just like the [sweep function in BaseRewarder.sol](https://github.com/sherlock-audit/2024-06-magicsea/blob/42e799446595c542eff9519353d3becc50cdba63/magicsea-staking/src/rewarders/BaseRewarder.sol#L208). This will prevent the permanent loss of funds for the briber.
 
 
+
+
+
+## Discussion
+
+**sherlock-admin2**
+
+The protocol team fixed this issue in the following PRs/commits:
+https://github.com/metropolis-exchange/magicsea-staking/pull/36
+
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue H-7: Attacker can block all votes to a specific pool by triggering an overflow error 
 
@@ -2689,6 +2723,10 @@ Excuse me, indeed my above comment was a bit off. It's of course impossible to k
 
 Planning to finalise the contest tomorrow 12 pm CEST to not withhold the contest results since the other escalations are resolved.
 
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
+
 # Issue M-1: New staking positions still gets the full reward amount as with old stakings, diluting rewards for old stakers 
 
 Source: https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/74 
@@ -2798,6 +2836,10 @@ When the admin distributes rewards, there should be a function that first update
 The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/7
 
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue M-2: `MlumStaking::addToPosition` should assing the amount multiplier based on the new lock duration instead of initial lock duration. 
 
@@ -2949,6 +2991,10 @@ The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/5
 
 
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
+
 # Issue M-3: Adding genuine BribeRewarder contract instances to a pool in order to incentivize users can be DOSed 
 
 Source: https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/190 
@@ -3046,6 +3092,10 @@ A malicious actor could use worthless tokens to fill this limit, preventing real
 The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/35
 
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue M-4: Rewards might get stuck when approved actor renews a position 
 
@@ -3149,6 +3199,10 @@ PR: https://github.com/metropolis-exchange/magicsea-staking/pull/8
 The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/8
 
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue M-5: Voting and bribe rewards can be hijacked during emergency unlock by already existing positions 
 
@@ -3544,6 +3598,10 @@ Yes, you’re correct, excuse me for the typo, I meant to keep this as medium as
 
 I think it is medium, so we'll settle it down.  
 
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
+
 # Issue M-6: Inconsistent check in `harvestPositionsTo()` function 
 
 Source: https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/329 
@@ -3619,6 +3677,10 @@ This was fixed during an other audit. add code comment to show the fix in the PR
 The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/23
 
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue M-7: Attacker can manipulate the `lockDuration` of other users positions 
 
@@ -3917,6 +3979,10 @@ We fixed this issue already for an other audit. Basically we removed all isAppro
 The protocol team fixed this issue in the following PRs/commits:
 https://github.com/metropolis-exchange/magicsea-staking/pull/9
 
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue M-8: Unclaimed rewards when emergency withdrawing are not redistributed in `MasterChef` and `MlumStaking` 
 
@@ -4445,6 +4511,10 @@ Escalations have been resolved successfully!
 
 Escalation status:
 - [chinmay-farkya](https://github.com/sherlock-audit/2024-06-magicsea-judging/issues/460/#issuecomment-2262703400): accepted
+
+**sherlock-admin2**
+
+The Lead Senior Watson signed off on the fix.
 
 # Issue M-9: Lack of support for fee on transfer, rebasing and tokens with balance modifications outside of transfers. 
 
