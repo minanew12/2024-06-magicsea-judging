@@ -10,11 +10,7 @@ Permission check in BribeRewarder::deposit(), this will lead to vote() function 
 ## Vulnerability Detail
 When people vote for one pool, there may be some extra rewards provided by bribe rewarders. When users vote for one pool with some bribe rewarders, voter contract will call bribe rewarder's `deposit` function. However, in bribe rewarder's `deposit()` function, there is one security check, the caller should be the NFT's owner, which is wrong. Because the voter contract call bribe rewarder's `deposit()`, msg.sender is voter contract, not the owner of NFT.
 This will block all vote() transactions if this votes pool has any bribe rewarder.
-```c
-    function vote(uint256 tokenId, address[] calldata pools, uint256[] calldata deltaAmounts) external {
-        ......
-        IVoterPoolValidator validator = _poolValidator;
-        for (uint256 i = 0; i < pools.length; ++i) {
+```
           ......
             uint256 deltaAmount = deltaAmounts[i];
             // per user account
